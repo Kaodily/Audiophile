@@ -1,12 +1,30 @@
 import { useContext } from "react";
 import { DataContext } from "../../App";
 import { FeaturesContext } from "./Features";
+import { useSelector,useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart-slice";
 import '../../index.css'
 
 const Details = () => {
-  const { filtered } = useContext(FeaturesContext);
-  const {width, addToCart, decreaseHandleClick, count, increaseHandleClick } =
-    useContext(DataContext);
+const dispatch = useDispatch();
+const {count} = useSelector(state=> state.cart)
+const { filtered } = useContext(FeaturesContext);
+const {width } = useContext(DataContext);
+    const addToCart = (product,count) => {
+      dispatch(cartActions.addItem(product))
+      // const item = product
+      // item.cartQuantity = count;
+      // setCartSize(prev => [...prev, item])
+      // setTimeout(() => {
+      // },1000)
+     
+    }
+    const increaseHandleClick = () => {
+      dispatch(cartActions.increase())
+    };
+    const decreaseHandleClick = () => {
+      dispatch(cartActions.decrease())
+    };
   return (
     <div>
       {filtered.map((product) => {

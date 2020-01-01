@@ -1,9 +1,12 @@
 import { useContext, useState, Fragment } from "react";
 import ReactDOM from "react-dom";
+import { useSelector,useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart-slice";
+
 import { DataContext } from "../../App";
 
 const Cart = () => {
-    const { cart } = useContext(DataContext);
+  const { cart } = useContext(DataContext);
   const [count, setCount] = useState(0);
   const increaseHandleClick = () => {
     setCount((prev) => prev + 1);
@@ -45,9 +48,9 @@ const Cart = () => {
   );
 };
 const CartComponent = () => {
-  const { isCart } = useContext(DataContext);
+const cartIsOpen = useSelector(state=>state.cart.isOpen)
   return (
-    isCart && (
+    cartIsOpen && (
       <div className="max-h-96 w-[90%] sm:w-[45%] sm:left-[75%] top-[100px] z-10 left-[50%] translate-x-[-50%]  bg-white rounded-md absolute  overflow-scroll">
         <Cart />
       </div>
@@ -55,7 +58,12 @@ const CartComponent = () => {
   );
 };
 const Backdrop = () => {
-  const { isCart, backdropHandleClick } = useContext(DataContext);
+  const cartIsOpen = useSelector(state=>state.cart.isOpen)
+  const dispatch = useDispatch();
+
+  const backdropHandleClick = () => {
+  dispatch(cartActions.backdropHandleClick())
+  }
   const styles = {
     position: "fixed",
     top: "0",
@@ -65,7 +73,7 @@ const Backdrop = () => {
     backgroundColor: "rgb(0, 0, 0, 0.7)",
     transition: "ease-in",
   };
-  return isCart && <div style={styles} onClick={backdropHandleClick}></div>;
+  return cartIsOpen && <div style={styles} onClick={backdropHandleClick}></div>;
 };
 
 const Exportmodal = () => {
