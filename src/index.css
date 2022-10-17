@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Homepage styles */
+.article{
+    background-image: url('../src/assets/home/mobile/image-header.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.pattern{
+    background-image: url('../src/assets/home/desktop/pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
+.speakerzx7{
+    background-image: url('../src/assets/home/mobile/image-speaker-zx7.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.earphones{
+    background-image: url('../src/assets/home/mobile/image-earphones-yx1.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.audiogear{
+    background-image: url('../src/assets/shared/mobile/image-best-gear.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+/* Headphones styles */
