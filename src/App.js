@@ -8,7 +8,7 @@ import Features from './components/Features/Features';
 
 export const CartContext = createContext()
 function App() {
-  const [cart, setCart] = useState(null)
+  // const [cart, setCart] = useState(null)
   const [isCart,setIsCart] = useState(false)
   const cartHandleClick = () => {
       setIsCart(prev =>!prev)
