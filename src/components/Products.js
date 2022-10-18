@@ -1,6 +1,5 @@
 import { datas } from '../Data'
 import {Link} from 'react-router-dom'
-import arrow from './../assets/shared/desktop/icon-arrow-right.svg'
 const Products = () => {
     return (
         <div className='bg-white relative mx-[30px] '>
@@ -13,9 +12,9 @@ const Products = () => {
                         <div className='flex justify-center mt-[10px]'>
                             <p className='text-[12px] pr-1 opacity-50' >SHOP </p>
                         <div>
-                        <img className='w-[7px] mt-1' src={arrow} alt={arrow} /> 
+                        <img className='w-[7px] mt-1' src='../assets/shared/desktop/icon-arrow-right.svg' alt='arrow' /> 
                             
-                    </div>
+                        </div>
                             </div>
                             </Link>
                     </div>

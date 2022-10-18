@@ -1,17 +1,18 @@
-import logoIcon from "./../assets/shared/desktop/logo.svg";
-import hamburgerIcon from "./../assets/shared/tablet/icon-hamburger.svg";
-import cartIcon from "./../assets/shared/desktop/icon-cart.svg";
+import { useContext } from "react";
+import { CartContext } from "../App";
+
 const Header = () => {
+  const {cartHandleClick} = useContext(CartContext)
   return (
     <header className="flex justify-between px-5 py-6 w-[100%} h-[70px] items-center shadow-sm bg-black">
       <div>
-        <img src={hamburgerIcon} alt="hamburgerIcon" />
+        <img src="../assets/shared/tablet/icon-hamburger.svg" alt="hamburgerIcon" />
       </div>
       <div>
-        <img src={logoIcon} alt="logo" />
+        <img src="../assets/shared/desktop/logo.svg" alt="logo" />
       </div>
-      <div>
-        <img src={cartIcon} alt="cartIcon" />
+      <div onClick={cartHandleClick} >
+        <img src="../assets/shared/desktop/icon-cart.svg" alt="cartIcon" />
       </div>
     </header>
   );

@@ -1,27 +1,21 @@
 import { createContext } from "react"
 import { useParams } from "react-router-dom"
-import { datas } from '../../Data'
+import datas  from '../../data.json'
 import Audiogear from "../Audiogear"
 import Footer from "../Footer"
 import Details from "./Details"
 import Goback from "./Goback"
  
 export const DataContext = createContext()
-const Features = () => {
-    const {product,features} = useParams()
-    const filtered = datas.filter(data => data.product === product)
-    const type = filtered.map(item => item.type)
-    let item;
-    for (let each of type) {
-              item  = each
-    }
-    const data = item.filter(data => data.name.includes(features))
+const Features = ({handleClick,cart}) => {
+    const { product, features } = useParams()
+    const filtered = datas.filter(data => data.name === features)
     return (
-        <DataContext.Provider value={{data}}>
+        <DataContext.Provider value={{filtered,handleClick}} >
             <Goback product={product} features={features} />
-            <Details />
+            <Details /> 
             <Audiogear />
-            <Footer />
+            <Footer /> 
 
       </DataContext.Provider>
     )

@@ -1,23 +1,24 @@
 import { useParams } from 'react-router-dom'
 import Introduction from "./Introduction"
 import Productdetails from "./Productdetails"
-import {datas} from '../../Data'
+import products from '../../data.json'
 import { createContext } from 'react'
 import Products from '../Products'
 import Audiogear from '../Audiogear'
 import Footer from '../Footer'
 
  export const DataContext = createContext()
-   const Product = () => {
-    const {product} = useParams()
-    const data = datas.filter(data => data.product === product)
+    const Product = () => {
+    const { product } = useParams()
+      const datas = products.filter(data => data.category === product)
+      console.log(datas)
     return (
-        <DataContext.Provider value ={{data}}>
-         <Introduction  />
-            <Productdetails />
-            <Products />
+        <DataContext.Provider value ={{datas,product}} >
+          <Introduction  />
+          <Productdetails /> 
+            <Products /> 
             <Audiogear />
-            <Footer />
+            <Footer /> 
         </DataContext.Provider>
     )
 }
