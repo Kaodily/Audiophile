@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+
+
 /* Homepage styles */
 .article{
     background-image: url('../public/assets/home/mobile/image-header.jpg');

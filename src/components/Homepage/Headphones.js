@@ -1,16 +1,16 @@
 import '../../index.css';
 import { Link } from 'react-router-dom';
-const IntroPage = () => {
+const Headphones = () => {
     return (
         <article className="article h-[580px] text-center py-[180px] text-white"  >
             <p className='text-[14px] opacity-50'>NEW PRODUCT</p>
             <h1 className='uppercase text-[24px] px-[80px] tracking-widest py-[20px]'>
                 XX99 Mark II HeadphoneS</h1>
             <p className='px-[24px] text-[14px] opacity-50'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-            <Link to ={'/headphones/XX99 Mark II Headphones'}>
+            <Link to ={'/headphones/xx99-mark-two-headphones'}>
             <button className='uppercase w-[150px] font-medium text-[14px] mt-[30px] h-[40px] bg-[#D87D4A]'>See product</button>
             </Link>
         </article>
     )
 }
-export default IntroPage
+export default Headphones

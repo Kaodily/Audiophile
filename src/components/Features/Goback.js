@@ -1,8 +1,8 @@
 import {Link} from 'react-router-dom'
-const Goback = ({product,features}) => {
+const Goback = ({category}) => {
     return (
-        <div className="px-12 font-medium text-[14px] leading-6 opacity-50 py-4">
-            <Link to={`/${product}`}>
+        <div className="px-12 font-medium text-[14px] leading-6 opacity-50 pt-6 pb-3">
+            <Link to={`/${category}`}>
             <p>Go Back</p>
             </Link>
         </div>

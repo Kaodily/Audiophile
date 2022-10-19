@@ -9,7 +9,7 @@ export const EarphonesInformation = () => {
     return (
         <div className="h-[200px] mt-6 mx-[30px] rounded-md px-8 py-12 text-black bg-[#F1F1F1]  ">
             <h3 className='font-bold text-[20px] tracking-widest'>YX1 EARPHONES</h3>
-         <Link to ={'/earphones/YX1 Wireless Earphones'}>
+         <Link to ={'/earphones/yx1-earphones'}>
                 <button className='uppercase w-[130px] text-[12px] mt-12 h-[40px] border-2 border-black'>See product</button>
                 </Link>
        </div>

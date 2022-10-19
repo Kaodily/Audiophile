@@ -12,7 +12,7 @@ const Footer = () => {
       <img
         src="../assets/shared/desktop/logo.svg"
         alt="logoIcon"
-        className="mx-auto mb-12 w-[130px]"
+        className="mx-auto mb-7 w-[130px]"
       />
 
       {products.map((product, index) => {
