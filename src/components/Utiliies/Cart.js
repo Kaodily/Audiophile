@@ -17,7 +17,7 @@ const Cart = () => {
       <div className="flex justify-between" >
         <h4>
           Cart(
-          <span>1</span>)
+                  <span>{cart.length}</span>)
         </h4>
         <p>Remove All</p>
           </div>
@@ -49,7 +49,7 @@ const CartComponent = () => {
   const { isCart } = useContext(CartContext);
   return (
     isCart && (
-      <div className="max-h-96 w-[90%] top-[100px] z-10 left-[50%] translate-x-[-50%]  bg-red-500 absolute  overflow-scroll">
+      <div className="max-h-96 w-[90%] top-[100px] z-10 left-[50%] translate-x-[-50%]  bg-white rounded-md absolute  overflow-scroll">
         <Cart />
       </div>
     )
