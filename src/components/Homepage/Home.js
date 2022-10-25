@@ -11,7 +11,7 @@ const Home = () => {
       <Headphones />
       <Products />
       <SpeakerZX9 />
-      <div className="sm:grid sm:grid-cols-4">
+      <div className="sm:grid sm:grid-cols-4 ">
       <SpeakerZX7 />
       <Earphones />
       <EarphonesInformation />

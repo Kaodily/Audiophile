@@ -17,7 +17,7 @@ const Details = () => {
           image = product.image.mobile
          }
         return (
-          <div key={product.id}>
+          <div key={product.id} className='lg:mx-[130px]'>
             <div className="sm:flex text-left">
               <div className="mx-[10px] rounded-md px-8 py-3 text-black ">
                 <img src={`${"."}${image}`} alt={product.name} />

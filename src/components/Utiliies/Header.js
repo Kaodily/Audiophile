@@ -19,7 +19,7 @@ const Header = () => {
           <img src="../assets/shared/desktop/logo.svg" alt="logo" />
         </div>
       </Link>
-      <div  className=' text-white hidden lg:flex lg:ml-[-150px]'>
+      <div  className=' text-white hidden lg:flex lg:ml-[-110px]'>
       {products.map((product, index) => {
         let linked = product === "home" ? "/" : `/${product}`;
         return (

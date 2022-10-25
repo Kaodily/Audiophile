@@ -84,13 +84,13 @@
       
     }
     .speakerzx7{
-        background-image: url('../public/assets/home/tablet/image-speaker-zx7.jpg');
+        background-image: url('../public/assets/home/desktop/image-speaker-zx7.jpg');
         background-repeat: no-repeat;
         background-position: top;
         background-size: cover;
     }
     .earphones{
-        background-image: url('../public/assets/home/tablet/image-earphones-yx1.jpg');
+        background-image: url('../public/assets/home/desktop/image-earphones-yx1.jpg');
         background-repeat: no-repeat;
         background-position: top;
         background-size: cover;
