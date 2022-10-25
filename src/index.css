@@ -38,4 +38,61 @@
 }
 
 
-/* Headphones styles */
+/* Media queries */
+@media (min-width:640px) {
+    .article{
+        background-image: url('../public/assets/home/tablet/image-header.jpg');
+       
+    }
+    .pattern{
+       background-position: bottom;
+        background-size: cover;
+    }
+    .audiogear{
+        background-image: url('../public/assets/shared/desktop/image-best-gear.jpg');
+        background-position: center;
+
+      
+    }
+    .speakerzx7{
+        background-image: url('../public/assets/home/tablet/image-speaker-zx7.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+    }
+    .earphones{
+        background-image: url('../public/assets/home/tablet/image-earphones-yx1.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+    }
+  
+}
+@media (min-width:1007px) {
+    .article{
+        background-image: url('../public/assets/home/desktop/image-hero.jpg');
+       
+    }
+    .pattern{
+       background-position: left;
+        background-size: contain;
+    }
+    .audiogear{
+        background-image: url('../public/assets/shared/desktop/image-best-gear.jpg');
+        background-position: center;
+
+      
+    }
+    .speakerzx7{
+        background-image: url('../public/assets/home/tablet/image-speaker-zx7.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+    }
+    .earphones{
+        background-image: url('../public/assets/home/tablet/image-earphones-yx1.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+    }
+}
