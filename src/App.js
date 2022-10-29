@@ -25,11 +25,6 @@ function App() {
   function windowListener() {
     setWidth(window.innerWidth)
   }
-
-
-   
-
-
   const increaseHandleClick = () => {
     setCount((prev) => prev + 1);
   };

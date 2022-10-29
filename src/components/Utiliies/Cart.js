@@ -4,7 +4,6 @@ import { DataContext } from "../../App";
 
 const Cart = () => {
     const { cart } = useContext(DataContext);
-  const [cartQuantity,setCartQuantity] = useState(0)
   const [count, setCount] = useState(0);
   const increaseHandleClick = () => {
     setCount((prev) => prev + 1);
