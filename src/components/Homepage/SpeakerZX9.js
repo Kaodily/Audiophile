@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 const SpeakerZX9 = () => {
     return (
-        <div className="pattern h-[500px] sm:h-[580px] lg:flex lg:justify-between  bg-[#D87D4A] mx-[30px] lg:mx-[130px] py-8 rounded-md lg:text-left text-white text-center ">
+        <div className="pattern h-[500px] sm:h-[580px] lg:flex lg:justify-between  bg-[#D87D4A] mx-[30px] lg:mx-[200px] py-8 rounded-md lg:text-left text-white text-center ">
             <div>
             <img src='../assets/home/desktop/image-speaker-zx9.png' className='w-[150px] sm:w-[200px] lg:w-[300px] mx-auto pt-3 lg:pt-[190px] lg:ml-[100px]' alt="speakerzx9" />
             </div>

@@ -13,10 +13,10 @@ export const FeaturesContext = createContext();
 
 const Features = ({ handleClick }) => {
   const { category, product } = useParams();
-  const {datas} = useContext(DataContext)
+  const {datas,width} = useContext(DataContext)
   const filtered = datas.filter((data) => data.slug === product);
   return (
-    <FeaturesContext.Provider value={{ filtered, handleClick}}>
+    <FeaturesContext.Provider value={{ filtered, handleClick,width}}>
       <div  >
       <Goback category={category} product={product} />
       <Details />

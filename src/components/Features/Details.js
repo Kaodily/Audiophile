@@ -11,28 +11,36 @@ const Details = () => {
     <div>
       {filtered.map((product) => {
         let image = product.image.mobile
-        if (width > '640') {
-           image = product.image.tablet
-        } else if (width > '840') {
-          image = product.image.mobile
-         }
+        if (width >= 768 && width <= 1024) {
+          image = product.image.tablet
+        } else if (width > 1024) {
+         image = product.image.desktop
+        }
+        // let productImage = product.gallery.first.mobile
+        // if (width >= 768 && width <= 1024) {
+        //   image = data.image.tablet
+        // } else if (width > 1024) {
+        //  image = data.image.desktop
+        // }
+
         return (
-          <div key={product.id} className='lg:mx-[130px]'>
-            <div className="sm:flex text-left">
-              <div className="mx-[10px] rounded-md px-8 py-3 text-black ">
+          <div key={product.id} className='lg:mx-[130px] '>
+            <div className="md:grid grid-cols-2 text-left ">
+              <div className="mx-[10px] md:mx-0 rounded-md px-8 py-3  ">
                 <img src={`${"."}${image}`} alt={product.name} />
               </div>
-              <div>
-                <h2 className="font-bold text-[20px] sm:text-[22px] w-[180px] ml-9 py-4  tracking-widest uppercase">
+              <div className="lg:pr-[200px] md:pt-36 lg:pt-24 md:leading-6">
+                <h2 className="font-bold text-[20px] sm:text-[22px] lg:w-[180px] ml-9 py-4  tracking-widest uppercase">
                   {product.name}
                 </h2>
-                <p className="px-9 leading-6 sm:pr-24 font-medium text-[14px] sm:text-[20px] sm:leading-8 opacity-50">
+                <p className="px-9 leading-6 lg:w-[500px] font-medium text-[14px] sm:text-[16px] sm:leading-8 opacity-50">
                   {product.description}
                 </p>
                 <p className="text-[12px] sm:text-[16px] font-bold py-4 px-9">
                   $ {product.price}
                 </p>
                 <div className="flex pl-9">
+                  <div>
                   <button className="w-[130px] sm::w-[150px] sm:h-[60px] h-[40px] font-medium flex justify-around py-2 sm:py-5 bg-[#F1F1F1]">
                     <span onClick={decreaseHandleClick} className="text-center">
                       -
@@ -40,6 +48,8 @@ const Details = () => {
                     {count}
                     <span onClick={increaseHandleClick}>+</span>
                   </button>
+                 </div>
+                  <div>
                   <button
                     className="uppercase w-[150px] sm::w-[150px] sm:h-[60px] sm:text-[16px] font-medium text-[14px] mx-2 text-white h-[40px] bg-[#D87D4A]"
                     onClick={() =>
@@ -48,29 +58,32 @@ const Details = () => {
                   >
                     ADD TO CART
                   </button>
+                 </div>
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-[14px] ml-9 pt-14 pb-3 sm:text-[20px] tracking-widest uppercase">
+              <div className="lg:grid grid-cols-2">
+                <div>
+                <h4 className="font-bold text-[14px] ml-9 pt-14 pb-3 sm:text-[20px] tracking-widest uppercase">
                 Features
               </h4>
-              <p className="px-9 leading-6 font-medium text-[14px]  sm:text-[20px] sm:leading-8 opacity-50">
+              <p className="px-9 leading-6 font-medium text-[14px] sm:text-[16px] sm:leading-8 opacity-50">
                 {product.features}
               </p>
-            </div>
-            <div className="sm:flex sm:justify-between">
-              <h4 className="font-bold text-[14px]  ml-9 pt-14 pb-3 sm:text-[20px]  sm:pt-5 tracking-widest uppercase">
+                </div>
+                <div className="md:flex md:justify-between lg:block lg:ml-24  ">
+              <h4 className="font-bold text-[14px]  ml-9 pt-14 lg:pt-16 pb-3 sm:text-[20px]  sm:pt-5 tracking-widest uppercase">
                 In the box
               </h4>
               <div className="sm:pt-5 sm:pr-12">
                 {product.includes.map((content, index) => {
                   return (
-                    <div key={index} className="flex list-none  pl-9 mb-1">
-                      <p className="font-medium text-[14px] sm:text-[20px] text-[#a48877] ">
+                    <div key={index} className="flex list-none  pl-9 mb-2">
+                      <p className="font-medium text-[14px] sm:text-[16px] text-[#a48877] ">
                         {content.quantity}x
                       </p>
-                      <li className="pl-3 lading-6 font-medium text-[14px] sm:text-[20px] opacity-50">
+                      <li className="pl-3 lading-6 font-medium text-[14px] sm:text-[16px] opacity-50">
                         {content.item}
                       </li>
                     </div>
@@ -78,27 +91,31 @@ const Details = () => {
                 })}
               </div>
             </div>
-            <div className="mx-[10px] sm:grid sm:grid-cols-2 gap-[20px] rounded-md px-8 py-20 text-black  ">
-              <div className="sm:mr-3 " >
+            </div>
+         
+          </div>
+            <div className="mx-[10px] sm:grid sm:grid-cols-2 rounded-md px-8 py-20 text-black  ">
+              <div className="sm:mr-2" >
                 <div className="sm:mb-2">
                 <img
-                className="rounded-md mb-3 sm:mb-[30px] "
-                src={`${"."}${product.gallery.first.mobile}`}
+                className="rounded-md mb-3 sm:mb-[10px] "
+                src={`${"."}${width >= 768 && width <= 1024 ? product.gallery.first.mobile : product.gallery.first.desktop}`}
                 alt={product.name}
               />
               </div>
               <div className="">
               <img
-                className="rounded-md mb-3 "
-                src={`${"."}${product.gallery.second.mobile}`}
+                className="roundproduct.gallery.second.mobileed-md mb-3 "
+                src={`${"."}${width >= 768 && width <= 1024 ? product.gallery.second.mobile : product.gallery.second.desktop}`}
                 alt={product.name}
               />
               </div>
             </div>
               <div>
               <img
-                className="rounded-md mb-3 "
-                src={`${"."}${product.gallery.third.mobile}`}
+                  className="rounded-md mb-3 h-[500px] "
+                  style={width > 1024 ? { height: '570px' } : { height: '350px' }}
+                src={`${"."}${width >= 768 && width <= 1024 ? product.gallery.third.mobile : product.gallery.third.desktop}`}
                 alt={product.name}
               />
             </div>

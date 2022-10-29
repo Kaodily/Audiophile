@@ -3,20 +3,20 @@ import { useContext } from "react";
 import { FeaturesContext } from "./Features";
 
 const Others = () => {
-  const {filtered,width} = useContext(FeaturesContext);
+  const { filtered, width } = useContext(FeaturesContext);
   return (
-    <div className='text-center'>
+    <div className='text-center mx-auto lg:mx-[100px]'>
       <h4 className='uppercase font-bold text-[16px] sm:text-[20px] '>You may also like</h4>
       {filtered.map((product, index) => {
-         let image = product.image.mobile
-         if (width > '640') {
-            image = product.image.tablet
-         } else if (width > '840') {
-           image = product.image.mobile
-          }
         return (
-          <div key ={index} className='py-7 sm:flex' >
-            {product.others.map((other, index) => {  
+          <div key={index} className='py-7 md:flex mx-[10px] lg:justify-center' >
+            {product.others.map((other, index) => { 
+                let image = other.image.mobile
+                if (width >= 768 && width <= 1024) {
+                   image = other.image.tablet
+                } else if (width > 1024) {
+                  image = other.image.desktop
+                 }
               return (
                 <div key={index} className="mx-[20px]  mb-9 rounded-md ">
                   <img
@@ -32,7 +32,7 @@ const Others = () => {
                   </Link>
                 </div>
               );
-            })}{" "}
+            })}
           </div>
         );
       })}

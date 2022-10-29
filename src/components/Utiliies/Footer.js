@@ -7,7 +7,7 @@ const Footer = () => {
     "../assets/shared/desktop/icon-instagram.svg",
   ];
   return (
-    <div className=" bg-black text-white text-center lg:px-[100px] sm:pb-6 sm:text-left ">
+    <div className=" bg-black text-white text-center lg:px-[150px] sm:pb-6 sm:text-left ">
       <div className="border-t-4 w-[100px] py-5 mx-auto sm:mx-[40px] border-[#D87D4A]"></div>
       <img
         src="../assets/shared/desktop/logo.svg"
