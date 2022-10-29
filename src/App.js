@@ -43,6 +43,11 @@ function App() {
     const item = product
     item.cartQuantity = count;
     setCartSize(prev => [...prev, item])
+    console.log(cartSize)
+
+    setTimeout(() => {
+      console.log(cartSize)
+    },1000)
    
   }
   return (

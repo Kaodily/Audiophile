@@ -16,13 +16,6 @@ const Details = () => {
         } else if (width > 1024) {
          image = product.image.desktop
         }
-        // let productImage = product.gallery.first.mobile
-        // if (width >= 768 && width <= 1024) {
-        //   image = data.image.tablet
-        // } else if (width > 1024) {
-        //  image = data.image.desktop
-        // }
-
         return (
           <div key={product.id} className='lg:mx-[130px] '>
             <div className="md:grid grid-cols-2 text-left ">
