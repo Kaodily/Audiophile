@@ -21,7 +21,7 @@ function App() {
     return (() => {
       window.removeEventListener('resize',windowListener)
     })
-  },[window.innerWidth]);
+  },[width]);
   function windowListener() {
     setWidth(window.innerWidth)
   }
