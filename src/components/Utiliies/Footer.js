@@ -7,14 +7,13 @@ const Footer = () => {
     "../assets/shared/desktop/icon-instagram.svg",
   ];
   return (
-    <div className=" bg-black text-white text-center lg:px-[150px] sm:pb-6 sm:text-left ">
+    <div className=" bg-black text-white text-center lg:px-[5%] sm:pb-6 sm:text-left ">
       <div className="border-t-4 w-[100px] py-5 mx-auto sm:mx-[40px] border-[#D87D4A]"></div>
       <img
         src="../assets/shared/desktop/logo.svg"
         alt="logoIcon"
         className="mx-auto mb-7 sm:mx-[40px] w-[130px] sm:w-[150px]"
       />
-
       <div  className='sm:flex mx-[40px]'>
       {products.map((product, index) => {
         let linked = product === "home" ? "/" : `/${product}`;

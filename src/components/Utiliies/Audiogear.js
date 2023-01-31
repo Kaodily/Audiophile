@@ -1,6 +1,6 @@
 const Audiogear = () => {
     return (
-        <div className="mt-20 sm:pb-7  mb-8 text-center lg:mx-[150px] lg:grid gap-7 grid-cols-2">
+        <div className="mt-20 sm:pb-7  mb-8 text-center lg:mx-[6%] lg:grid gap-7 grid-cols-2">
             <div className="audiogear h-[300px] sm:h-[400px] lg:h-[450px] mx-[30px] rounded-md px-8 py-12 text-black ">
             </div>
             <div className="lg:text-left lg:pl-8 lg:mt-20 order-first">

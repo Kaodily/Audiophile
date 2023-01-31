@@ -7,7 +7,7 @@ const Header = () => {
   const products = ["home", "headphones", "speakers", "earphones"];
   
   return (
-    <header className="flex justify-between px-5 py-6 w-[100%} h-[70px] md:px-[100px] lg:px-[140px] items-center shadow-sm bg-black">
+    <header className="flex justify-between px-5 py-6 w-[100%} h-[70px] md:px-[5%] lg:pl-[8%] lg:pr-[5%] items-center shadow-sm bg-black">
       <div className="lg:hidden">
         <img
           src="../assets/shared/tablet/icon-hamburger.svg"

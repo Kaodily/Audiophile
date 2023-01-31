@@ -5,7 +5,7 @@ const Products = () => {
         <div className='bg-white relative sm:flex md:justify-center sm:mt-5 mx-[30px] '>
             {datas.map(data => {
                 return (
-                    <div key={data.id} className='w-[100%] lg:w-[25%] lg:h-[220px] sm:mr-3 lg:mx-5 relative h-[150px] bg-[#F1F1F1] rounded-md my-[70px] '>
+                    <div key={data.id} className='w-[100%] lg:w-[26%] lg:h-[240px] sm:mr-3 lg:mx-5 relative h-[150px] bg-[#F1F1F1] rounded-md my-[70px] '>
                         <img src={data.image} alt={data.product} className='w-[130px] lg:w-[160px] absolute top-[-30px] left-[50%] translate-x-[-50%] x ' /> 
                         <h3 className='uppercase text-center text-[14px] sm:text-[20px] font-bold pt-[80px] lg:pt-[120px]'>{data.product}</h3>    
                             <Link to={`/${data.product}`}>
