@@ -87,9 +87,9 @@ const Details = () => {
             </div>
          
           </div>
-            <div className="mx-[10px] sm:grid sm:grid-cols-2 rounded-md px-8 py-20 text-black  ">
-              <div className="sm:mr-2" >
-                <div className="sm:mb-2">
+            <div className="mx-[10px] sm:flex rounded-md px-8 py-20 text-black  ">
+              <div className="sm:mr-6" >
+                <div className="sm:mb-6">
                 <img
                 className="rounded-md mb-3 sm:mb-[10px] "
                 src={`${"."}${width >= 768 && width <= 1024 ? product.gallery.first.mobile : product.gallery.first.desktop}`}
@@ -98,7 +98,7 @@ const Details = () => {
               </div>
               <div className="">
               <img
-                className="roundproduct.gallery.second.mobileed-md mb-3 "
+                className="rounded-md mb-3 "
                 src={`${"."}${width >= 768 && width <= 1024 ? product.gallery.second.mobile : product.gallery.second.desktop}`}
                 alt={product.name}
               />
@@ -106,8 +106,8 @@ const Details = () => {
             </div>
               <div>
               <img
-                  className="rounded-md mb-3 h-[500px] "
-                  style={width > 1024 ? { height: '570px' } : { height: '350px' }}
+                  className="rounded-md mb-3 "
+                  // style={width > 1024 ? { height: '570px' } : { height: '350px' }}
                 src={`${"."}${width >= 768 && width <= 1024 ? product.gallery.third.mobile : product.gallery.third.desktop}`}
                 alt={product.name}
               />
