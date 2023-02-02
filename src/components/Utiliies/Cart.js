@@ -1,19 +1,23 @@
-import { useContext, useState, Fragment } from "react";
+import {  useState, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { useSelector,useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
-import { DataContext } from "../../App";
+
 
 const Cart = () => {
-  const { cart } = useContext(DataContext);
-  const [count, setCount] = useState(0);
+  const { cart , quantity} = useSelector(state => state.cart)
+  const dispatch = useDispatch()
+  const [count, setCount] = useState(quantity);
   const increaseHandleClick = () => {
     setCount((prev) => prev + 1);
   };
   const decreaseHandleClick = () => {
     count <= 0 ? setCount(0) : setCount((prev) => prev - 1);
   };
+  const removeAll= () =>{
+    dispatch(cartActions.removeAll())
+  }
   return (
     <div className="px-5 py-5">
       <div className="flex justify-between" >
@@ -21,7 +25,7 @@ const Cart = () => {
           Cart(
          <span>{cart.length}</span>)
         </h4>
-        <p>Remove All</p>
+        <p onClick={removeAll}> Remove All</p>
           </div>
           {cart.map(item => {
               return (
@@ -37,7 +41,7 @@ const Cart = () => {
                       <button className="w-[90px] h-[40px] mt-6 font-medium flex justify-around py-2 bg-[#F1F1F1]">
                   <span onClick={decreaseHandleClick} className="text-center">
                     -
-                              </span>1
+                              </span>{count}
                               <span onClick={increaseHandleClick}>+</span>
                 </button>
                       </div>

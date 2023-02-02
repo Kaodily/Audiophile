@@ -5,24 +5,39 @@ name: "cart",
 initialState:{
     count: 0,
     isOpen: false,
-    cart:[]
+    cart:[],
+    quantity:0
 },
 reducers:{
     increase(state,action){
      state.count++},
      decrease(state,action){
-     state.count--} ,
+     state.count--
+     if(state.count <= 0){
+      state.count = 0;
+     }
+    } ,
      cartIsOpen(state){
       state.isOpen = !state.isOpen
      },
      addItem(state,action){
-      state.cart = state.cart.push(action.payload)
-    //   const carts = state.cart.filter((value, index, self) => self.indexOf(value) === index);
-      console.log(state.cart)
+     state.count= 0
+     state.quantity = action.payload.count;
+     const newItem = action.payload.product;
+     let existingItem = state.cart.find(item => item.id === newItem.id)
+     if(existingItem){
+       state.quantity++
+     }else{
+        state.cart.push(newItem)
+     }
      },
      backdropHandleClick(state){
      state.isOpen = !state.isOpen
+     },
+     removeAll(state){
+        state.cart =[]
      }
+     
 }
 })
 export const cartActions = cartSlice.actions;

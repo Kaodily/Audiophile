@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { DataContext } from "../../App";
-import { useDispatch } from "react-redux";
+
+import { useDispatch,useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
 const Header = () => {
-  const { cart } = useContext(DataContext);
+  const { cart } = useSelector(state => state.cart)
+
   const products = ["home", "headphones", "speakers", "earphones"];
   const dispatch = useDispatch()
   const cartHandleClick = () => {
   dispatch(cartActions.cartIsOpen())
-  // const uniqueCart = cartSize.filter((product, index) => cartSize.indexOf(product) === index)
-  // setCart(uniqueCart)
 };
   return (
     <header className="flex justify-between px-5 py-6 w-[100%} h-[70px] md:px-[5%] lg:pl-[8%] lg:pr-[5%] items-center shadow-sm bg-black">

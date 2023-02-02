@@ -11,7 +11,8 @@ const {count} = useSelector(state=> state.cart)
 const { filtered } = useContext(FeaturesContext);
 const {width } = useContext(DataContext);
     const addToCart = (product,count) => {
-      dispatch(cartActions.addItem(product))
+      let items = {product,count}
+      dispatch(cartActions.addItem(items))
       // const item = product
       // item.cartQuantity = count;
       // setCartSize(prev => [...prev, item])
