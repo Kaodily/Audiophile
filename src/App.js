@@ -12,7 +12,7 @@ import Exportmodal from "./components/Utiliies/Cart";
 
 export const DataContext = createContext();
 function App() {
-  const [cartSize, setCartSize] = useState([])
+  // const [cartSize, setCartSize] = useState([])
   // const [cart, setCart] = useState([])
   const [width,setWidth] = useState('')
  
@@ -28,7 +28,7 @@ function App() {
  
  
   return (
-    <DataContext.Provider value={{cartSize,datas,width}}>
+    <DataContext.Provider value={{datas,width}}>
         <BrowserRouter>
         <Fragment>
          <Exportmodal />
