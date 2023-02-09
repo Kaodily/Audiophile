@@ -8,14 +8,14 @@ import Product from "./components/ProductDetails/Product";
 import Home from "./components/Homepage/Home";
 import Features from "./components/Features/Features";
 import Exportmodal from "./components/Utiliies/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import Navbar from "./components/Utiliies/Navbar";
 
 
 export const DataContext = createContext();
 function App() {
-  // const [cartSize, setCartSize] = useState([])
-  // const [cart, setCart] = useState([])
+  
   const [width,setWidth] = useState('')
- 
   useEffect(() => {
     window.addEventListener('resize',windowListener)
     return (() => {
@@ -33,12 +33,17 @@ function App() {
         <Fragment>
          <Exportmodal />
           <Header />
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/:category" element={<Product />} />
             <Route
               path="/:category/:product"
               element={<Features />}
+            />
+            <Route
+              path="/Checkout"
+              element={<Checkout />}
             />
           </Routes>
         </Fragment>

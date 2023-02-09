@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Headphones = () => {
     return (
         <article className="article h-[580px] sm:h-[700px] text-center lg:text-left py-[180px] text-white"  >
-           <div className="lg:w-[40%] lg:pl-[8%]">
+           <div className="lg:w-[40%] lg:pl-[10%]">
            <p className='text-[14px] tracking-widest  opacity-50'>NEW PRODUCT</p>
             <h1 className='uppercase text-[24px] sm:px-[190px] lg:max-w-3xl sm:text-[36px] lg:pl-[0] lg:pr-[0]  px-[80px] tracking-widest py-[20px]'>
                 XX99 Mark II HeadphoneS</h1>

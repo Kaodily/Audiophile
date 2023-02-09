@@ -7,12 +7,13 @@ const Footer = () => {
     "../assets/shared/desktop/icon-instagram.svg",
   ];
   return (
-    <div className=" bg-black text-white text-center lg:px-[5%] sm:pb-6 sm:text-left ">
+    <div className=" bg-black text-white text-center lg:px-[5%] sm:pb-7 sm:text-left ">
       <div className="border-t-4 w-[100px] py-5 mx-auto sm:mx-[40px] border-[#D87D4A]"></div>
-      <img
+   <div className="lg:flex justify-between">
+   <img
         src="../assets/shared/desktop/logo.svg"
         alt="logoIcon"
-        className="mx-auto mb-7 sm:mx-[40px] w-[130px] sm:w-[150px]"
+        className="mx-auto my-7 sm:mx-[40px] w-[130px] sm:w-[150px]"
       />
       <div  className='sm:flex mx-[40px]'>
       {products.map((product, index) => {
@@ -28,7 +29,8 @@ const Footer = () => {
         );
       })}
      </div>
-      <p className="px-9 leading-6 font-medium text-[14px] sm:text-[16px] sm:leading-8 my-8 opacity-50">
+   </div>
+      <p className="px-9 lg:w-[50%]  leading-6 font-medium text-[14px] sm:text-[16px] sm:leading-8 my-8 opacity-50">
         Audiophile is an all in one stop to fulfill your audio needs. We're a
         small team of music lovers and sound specialists who are devoted to
         helping you get the most out of personal audio. Come and visit our demo

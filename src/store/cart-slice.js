@@ -9,18 +9,19 @@ initialState:{
     quantity:0
 },
 reducers:{
-    increase(state,action){
-     state.count++},
-     decrease(state,action){
+    increase (state,action) {
+     state.count++ 
+   },
+     decrease (state,action) {
      state.count--
      if(state.count <= 0){
       state.count = 0;
      }
     } ,
-     cartIsOpen(state){
+     cartIsOpen (state) {
       state.isOpen = !state.isOpen
      },
-     addItem(state,action){
+     addItem (state,action) {
      state.count= 0
      state.quantity = action.payload.count;
      const newItem = action.payload.product;
@@ -31,11 +32,15 @@ reducers:{
         state.cart.push(newItem)
      }
      },
-     backdropHandleClick(state){
+     backdropHandleClick (state) {
      state.isOpen = !state.isOpen
      },
-     removeAll(state){
+     removeAll (state) {
         state.cart =[]
+     },
+     checkout (state) {
+      console.log("hello")
+      state.isOpen = !state.isOpen
      }
      
 }

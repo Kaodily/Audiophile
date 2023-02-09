@@ -2,7 +2,7 @@ import { datas } from '../../Data'
 import {Link} from 'react-router-dom'
 const Products = () => {
     return (
-        <div className='bg-white relative sm:flex md:justify-center sm:mt-5 mx-[30px] '>
+        <div className='bg-white relative sm:flex md:justify-center sm:mt-16 mx-[30px] '>
             {datas.map(data => {
                 return (
                     <div key={data.id} className='w-[100%] lg:w-[26%] lg:h-[240px] sm:mr-3 lg:mx-5 relative h-[150px] bg-[#F1F1F1] rounded-md my-[70px] '>

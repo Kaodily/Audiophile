@@ -6,7 +6,7 @@ import Audiogear from "../Utiliies/Audiogear";
 import Footer from "../Utiliies/Footer";
 import Products from "../Utiliies/Products";
 import Details from "./Details";
-import Goback from "./Goback";
+import Goback from "../Utiliies/Goback";
 import Others from "./Others";
 
 export const FeaturesContext = createContext();
@@ -15,8 +15,10 @@ const Features = ({ handleClick }) => {
   const { category, product } = useParams();
   const {datas,width} = useContext(DataContext)
   const filtered = datas.filter((data) => data.slug === product);
+  console.log(category)
   return (
     <FeaturesContext.Provider value={{ filtered, handleClick,width}}>
+      
       <div  >
       <Goback category={category} product={product} />
       <Details />
