@@ -1,10 +1,10 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 const {isNav} = useSelector(state => state.general)
-const dispatch = useDispatch()
+// const dispatch = useDispatch()
   const products = ["home", "headphones", "speakers", "earphones"];
   return (
  <>

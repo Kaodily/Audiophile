@@ -5,7 +5,7 @@ import { generalActions } from "../../store/general-slice";
 
 const Header = () => {
   const { cart } = useSelector(state => state.cart)
-  const {isNav} = useSelector(state => state.general)
+  // const {isNav} = useSelector(state => state.general)
   const products = ["home", "headphones", "speakers", "earphones"];
   const dispatch = useDispatch()
   const cartHandleClick = () => {
