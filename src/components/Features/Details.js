@@ -20,6 +20,7 @@ const {width } = useContext(DataContext);
       // },1000)
      
     }
+    
     const increaseHandleClick = () => {
       dispatch(cartActions.increase())
     };

@@ -22,7 +22,7 @@ const Cart = () => {
   const Checkout = () => {
     dispatch(cartActions.checkout())
   }
-  console.log(cart)
+
   // const total = cart.length >= 2 ? cart.reduce((a,b)=>a.price + b.price) : cart.price
   return (
     <div className="px-5 py-5">
@@ -33,9 +33,10 @@ const Cart = () => {
         </h4>
         <p className="" onClick={removeAll}> Remove All</p>
       </div>
-      {cart.map(item => {
+    <div className="max-h-[200px] overflow-scroll">
+    {cart.map(item => {
         return (
-          <div key={item.id} className='flex justify-around my-3'>
+          <div key={item.id} className='flex justify-between my-3'>
             <div>
               <img className="w-12 rounded-md mt-4" src={`${'.'}${item.image.mobile}`} alt={item.name} />
             </div>
@@ -55,6 +56,7 @@ const Cart = () => {
           </div>
         )
       })}
+    </div>
       <div className="py-1 my-4 flex justify-between">
         <p>TOTAL</p>
         <p>$0</p>

@@ -9,7 +9,7 @@ const Products = () => {
                         <img src={data.image} alt={data.product} className='w-[130px] lg:w-[160px] absolute top-[-30px] left-[50%] translate-x-[-50%] x ' /> 
                         <h3 className='uppercase text-center text-[14px] sm:text-[20px] font-bold pt-[80px] lg:pt-[120px]'>{data.product}</h3>    
                             <Link to={`/${data.product}`}>
-                        <div className='flex justify-center mt-[10px]'>
+                        <div onClick={window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}  className='flex justify-center mt-[10px]'>
                             <p className='text-[12px] sm:text-[14px] pr-1 opacity-50' >SHOP </p>
                         <div>
                         <img className='w-[7px] mt-1' src='../assets/shared/desktop/icon-arrow-right.svg' alt='arrow' /> 

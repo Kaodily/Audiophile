@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Footer = () => {
   const products = ["home", "headphones", "speakers", "earphones"];
   const socials = [
@@ -20,11 +20,11 @@ const Footer = () => {
         let linked = product === "home" ? "/" : `/${product}`;
         return (
           <div key={index}>
-            <Link to={linked}>
-              <li className="uppercase sm:mr-3 sm:text-[14px] text-[12px] pt-4 list-none">
-                {product}
-              </li>
-            </Link>
+            <NavLink to={linked} style={({ isActive }) => ({color: isActive ? '#fbaf85' : 'white' })} className='tex-[20px]' end>
+          <li className="uppercase sm:mr-3 sm:text-[20px] text-[20px] pt-5 list-none">
+            {product}
+          </li>
+        </NavLink>
           </div>
         );
       })}

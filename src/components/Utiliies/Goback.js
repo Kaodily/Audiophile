@@ -1,10 +1,13 @@
-import {Link} from 'react-router-dom'
-const Goback = ({category}) => {
+import { useNavigate} from 'react-router-dom'
+const Goback = () => {
+const navigate = useNavigate()
+
+const handleClick = () => {
+    navigate(-1)
+}
     return (
-        <div className="px-8 font-medium text-[14px] sm:text-[18px] lg:mx-[130px] leading-6 opacity-50 pt-6 pb-3">
-            <Link to={`/${category}`}>
+        <div onClick={handleClick} className="px-8 font-medium text-[14px] sm:text-[18px] lg:mx-[100px] leading-6 opacity-50 pt-6 pb-3">
             <p>Go Back</p>
-            </Link>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { generalActions } from "../../store/general-slice";
@@ -34,11 +34,11 @@ const openNavbar = () =>{
         let linked = product === "home" ? "/" : `/${product}`;
         return (
           <div key={index}>
-            <Link to={linked}>
-              <li className="uppercase sm:mr-3 sm:text-[14px] text-[12px] pt-2 list-none">
-                {product}
-              </li>
-            </Link>
+            <NavLink to={linked} style={({ isActive }) => ({color: isActive ? '#fbaf85' : 'white'})} end>
+          <li className="uppercase sm:mr-3 sm:text-[20px] text-[20px] pt-1 list-none">
+            {product}
+          </li>
+        </NavLink>
           </div>
         );
       })}

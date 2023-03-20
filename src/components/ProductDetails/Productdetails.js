@@ -8,6 +8,7 @@ const Productdetails = () => {
   for (let each of data) {
     arr.unshift(each);
   }
+  
 
   return (
     <article className="pt-5 text-center lg:mx-[130px] ">

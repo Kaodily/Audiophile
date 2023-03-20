@@ -26,7 +26,7 @@ const Others = () => {
                   />
                   <h5 className='uppercase pt-2 font-bold text-[14px] sm:text-[16px]'>{other.name}</h5>
                   <Link to={`/${product.category}/${other.slug}`}>
-                    <button className="uppercase w-[150px] sm:w-[180px] sm:h-[60px] font-meduim text-[14px] sm:text-[16px] text-white mt-[10px] h-[40px] bg-[#D87D4A]">
+                    <button onClick={window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} className="uppercase w-[150px] sm:w-[180px] sm:h-[60px] font-meduim text-[14px] sm:text-[16px] text-white mt-[10px] h-[40px] bg-[#D87D4A]">
                       See product
                     </button>
                   </Link>
