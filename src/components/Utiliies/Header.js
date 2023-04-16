@@ -17,7 +17,8 @@ const openNavbar = () =>{
 
 
   return (
-    <header className="flex justify-between px-5 py-6 w-[100%} h-[100px] md:px-[5%] lg:pl-[10%] lg:pr-[7%] items-center shadow-sm bg-[#0C0C0C]">
+  <div className="w-[100%] sticky z-[1] top-0">
+      <header className="flex justify-between px-5 py-6 w-[100%} h-[100px] md:px-[5%] lg:pl-[10%] lg:pr-[7%] items-center shadow-sm bg-black">
       <div onClick={openNavbar} className="lg:hidden">
         <img
           src="../assets/shared/tablet/icon-hamburger.svg"
@@ -48,6 +49,7 @@ const openNavbar = () =>{
         <sub className="text-red-500 text-center ml-1">{cart.length <= 0 ? null :cart.length}</sub>
       </div>
     </header>
+  </div>
   );
 };
 export default Header;

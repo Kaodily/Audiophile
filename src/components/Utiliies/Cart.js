@@ -22,8 +22,6 @@ const Cart = () => {
   const Checkout = () => {
     dispatch(cartActions.checkout())
   }
-
-  // const total = cart.length >= 2 ? cart.reduce((a,b)=>a.price + b.price) : cart.price
   return (
     <div className="px-5 py-5">
       <div className="flex justify-between" >
