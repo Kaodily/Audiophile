@@ -1,44 +1,32 @@
-import { createContext, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../../App";
+
 import Audiogear from "../Utiliies/Audiogear";
 import Footer from "../Utiliies/Footer";
 import Products from "../Utiliies/Products";
-import Details from "./Details";
 import Goback from "../Utiliies/Goback";
-import Others from "./Others";
 
-export const FeaturesContext = createContext();
+import Details from "./Details";
+import Others from "./Others";
 
 const Features = ({ handleClick }) => {
   const { category, product } = useParams();
-  const {datas,width} = useContext(DataContext)
+  const { datas } = useContext(DataContext);
   const filtered = datas.filter((data) => data.slug === product);
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
- 
+
   return (
-    <FeaturesContext.Provider value={{ filtered, handleClick,width}}>
-      
-      <div  >
+    <div>
       <Goback category={category} product={product} />
-      <Details />
-      <Others />
+      <Details filtered={filtered} />
+      <Others filtered={filtered} />
       <Products />
       <Audiogear />
       <Footer />
-      </div>
-    </FeaturesContext.Provider>
+    </div>
   );
 };
 export default Features;
-
-
-
-
-
-
-
-
-
