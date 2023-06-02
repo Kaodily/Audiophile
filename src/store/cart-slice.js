@@ -19,6 +19,9 @@ const cartSlice = createSlice({
       }
     },
     cartIsOpen(state) {
+      if (state) {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      }
       state.isOpen = !state.isOpen;
     },
     addItem(state, action) {

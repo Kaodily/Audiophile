@@ -39,8 +39,9 @@ const Header = () => {
                   style={({ isActive }) => ({
                     color: isActive ? "#fbaf85" : "white",
                   })}
+                  className="text-[12px] sm:text-[12px]"
                   end>
-                  <li className="uppercase sm:mr-3 sm:text-[20px] text-[20px] pt-1 list-none">
+                  <li className="uppercase sm:mr-3 sm:text-[20px] text-[14px] pt-1 list-none">
                     {product}
                   </li>
                 </NavLink>

@@ -16,26 +16,24 @@ const Footer = () => {
           alt="logoIcon"
           className="mx-auto my-7 sm:mx-[40px] w-[130px] sm:w-[150px]"
         />
-        <div className="sm:flex mx-[40px]">
+        <ul className="sm:flex mx-[40px]">
           {products.map((product, index) => {
             let linked = product === "home" ? "/" : `/${product}`;
             return (
-              <div key={index}>
+              <li key={index} className="uppercase sm:mr-3 pt-5 list-none">
                 <NavLink
                   to={linked}
                   style={({ isActive }) => ({
                     color: isActive ? "#fbaf85" : "white",
                   })}
-                  className="tex-[20px]"
+                  className="text-[12px] sm:text-[16px]"
                   end>
-                  <li className="uppercase sm:mr-3 sm:text-[20px] text-[20px] pt-5 list-none">
-                    {product}
-                  </li>
+                  {product}
                 </NavLink>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
       <p className="px-9 lg:w-[50%]  leading-6 font-medium text-[14px] sm:text-[16px] sm:leading-8 my-8 opacity-50">
         Audiophile is an all in one stop to fulfill your audio needs. We're a

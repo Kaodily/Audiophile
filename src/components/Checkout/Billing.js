@@ -26,7 +26,7 @@ const Billing = () => {
           <label htmlFor="phone number">Phone Number</label>
           <input
             id="phone number"
-            type="phone number"
+            type="tel"
             className="w-[100%] rounded-md  mb-6 mt-2 h-[50px] border-2 border-gray-200"
           />
         </div>

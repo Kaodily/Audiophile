@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
-import { DataContext } from "../../App";
+import { Context } from "../../store/context/AppContext";
 
 const Details = ({ filtered }) => {
   const dispatch = useDispatch();
   const { count } = useSelector((state) => state.cart);
-  const { width } = useContext(DataContext);
+  const { width } = useContext(Context);
   const addToCart = (product, count) => {
     let items = { product, count };
     dispatch(cartActions.addItem(items));

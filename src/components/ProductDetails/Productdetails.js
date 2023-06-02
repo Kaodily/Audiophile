@@ -1,16 +1,15 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../../App";
+import { Context } from "../../store/context/AppContext";
 
 const Productdetails = ({ data }) => {
-  const { width } = useContext(DataContext);
+  const { width } = useContext(Context);
   const arr = data.reverse();
 
   return (
     <article className="pt-5 text-center  ">
       {arr.map((data, index) => {
         let image = data.categoryImage.mobile;
-        console.log(image);
         if (width >= 768 && width <= 1022) {
           image = data.categoryImage.tablet;
         } else if (width > 1022) {

@@ -1,8 +1,8 @@
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, quantity } = useSelector((state) => state.cart);
@@ -110,13 +110,13 @@ const Backdrop = () => {
 
 const Exportmodal = () => {
   return (
-    <Fragment>
+    <>
       {ReactDOM.createPortal(<Backdrop />, document.getElementById("backdrop"))}
       {ReactDOM.createPortal(
         <CartComponent />,
         document.getElementById("modal")
       )}
-    </Fragment>
+    </>
   );
 };
 export default Exportmodal;

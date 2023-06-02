@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../../App";
+import { Context } from "../../store/context/AppContext";
 
 const Others = ({ filtered }) => {
-  const { width } = useContext(DataContext);
+  const { width } = useContext(Context);
   return (
     <div className="text-center mx-auto lg:mx-[100px]">
       <h4 className="uppercase font-bold text-[16px] sm:text-[20px] ">

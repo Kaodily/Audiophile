@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { DataContext } from "../../App";
 
 import Audiogear from "../Utiliies/Audiogear";
 import Footer from "../Utiliies/Footer";
@@ -9,14 +8,12 @@ import Goback from "../Utiliies/Goback";
 
 import Details from "./Details";
 import Others from "./Others";
+import { Context } from "../../store/context/AppContext";
 
 const Features = ({ handleClick }) => {
   const { category, product } = useParams();
-  const { datas } = useContext(DataContext);
+  const { datas } = useContext(Context);
   const filtered = datas.filter((data) => data.slug === product);
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
 
   return (
     <div>
