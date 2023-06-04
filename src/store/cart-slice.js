@@ -3,21 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    count: 0,
     isOpen: false,
     cart: [],
-    quantity: 0,
   },
   reducers: {
-    increase(state, action) {
-      state.count++;
-    },
-    decrease(state, action) {
-      state.count--;
-      if (state.count <= 0) {
-        state.count = 0;
-      }
-    },
     cartIsOpen(state) {
       if (state) {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -25,15 +14,32 @@ const cartSlice = createSlice({
       state.isOpen = !state.isOpen;
     },
     addItem(state, action) {
-      state.count = 0;
-      state.quantity = action.payload.count;
-      const newItem = action.payload.product;
-      let existingItem = state.cart.find((item) => item.id === newItem.id);
+      const { count, product } = action.payload;
+      const { id } = product;
+
+      const existingItem = state.cart.find((item) => item.id === id);
       if (existingItem) {
-        state.quantity++;
-      } else {
-        state.cart.push(newItem);
+        const updatedCart = state.cart.map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                quantity: count,
+              }
+            : item
+        );
+        return { ...state, cart: updatedCart };
       }
+
+      const total = product.price * count;
+      console.log(total);
+      const newItem = { ...product, quantity: count };
+      const updatedCart = [...state.cart, newItem];
+
+      return { ...state, cart: updatedCart };
+    },
+    updateCart(state, action) {
+      const newCart = action.payload;
+      return { ...state, cart: newCart };
     },
     backdropHandleClick(state) {
       state.isOpen = !state.isOpen;
@@ -42,7 +48,6 @@ const cartSlice = createSlice({
       state.cart = [];
     },
     checkout(state) {
-      console.log("hello");
       state.isOpen = !state.isOpen;
     },
   },

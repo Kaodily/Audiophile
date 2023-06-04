@@ -1,38 +1,44 @@
-import React, { useContext } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useContext, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { Context } from "../../store/context/AppContext";
 
 const Details = ({ filtered }) => {
   const dispatch = useDispatch();
-  const { count } = useSelector((state) => state.cart);
+  const [quantity, setQuantity] = useState(0);
   const { width } = useContext(Context);
   const addToCart = (product, count) => {
     let items = { product, count };
     dispatch(cartActions.addItem(items));
   };
-
+  const item = filtered[0].slug;
+  useEffect(() => {
+    setQuantity(0);
+  }, [item]);
   const increaseHandleClick = () => {
-    dispatch(cartActions.increase());
+    setQuantity((count) => (count += 1));
   };
   const decreaseHandleClick = () => {
-    dispatch(cartActions.decrease());
+    setQuantity((count) => (count -= 1));
   };
   return (
     <div>
       {filtered.map((product) => {
-        let image = product.image.mobile;
-        if (width >= 768 && width <= 1024) {
-          image = product.image.tablet;
-        } else if (width > 1024) {
-          image = product.image.desktop;
-        }
         return (
           <div key={product.id} className="lg:mx-[130px] ">
             <div className="md:grid grid-cols-2 text-left ">
-              <div className="mx-[10px] md:mx-0 rounded-md px-8 py-3  ">
-                <img src={`${"."}${image}`} alt={product.name} />
-              </div>
+              <picture className="mx-[10px] md:mx-0 rounded-md px-8 py-3 ">
+                <source
+                  srcSet={`${"."}${product.image.desktop}`}
+                  media="(min-width: 1280px)"
+                />
+                <source
+                  srcSet={`${"."}${product.image.tablet}`}
+                  media="(min-width: 768px)"
+                />
+                <source srcSet={product.image.mobile} />
+                <img src={product.image.mobile} alt={product.name} />
+              </picture>
               <div className="lg:pr-[200px] md:pt-36 lg:pt-24 md:leading-6">
                 <h2 className="font-bold text-[20px] sm:text-[22px] lg:w-[180px] ml-9 py-4  tracking-widest uppercase">
                   {product.name}
@@ -51,7 +57,7 @@ const Details = ({ filtered }) => {
                         className="text-center">
                         -
                       </span>
-                      {count}
+                      {quantity}
                       <span onClick={increaseHandleClick}>+</span>
                     </button>
                   </div>
@@ -59,7 +65,7 @@ const Details = ({ filtered }) => {
                     <button
                       className="uppercase w-[150px] sm::w-[150px] sm:h-[60px] sm:text-[16px] font-medium text-[14px] mx-2 text-white h-[40px] bg-[#D87D4A]"
                       onClick={() =>
-                        count > 0 ? addToCart(product, count) : null
+                        quantity > 0 ? addToCart(product, quantity) : null
                       }>
                       ADD TO CART
                     </button>

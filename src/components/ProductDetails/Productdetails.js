@@ -1,26 +1,27 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../../store/context/AppContext";
 
 const Productdetails = ({ data }) => {
-  const { width } = useContext(Context);
   const arr = data.reverse();
-
   return (
     <article className="pt-5 text-center  ">
       {arr.map((data, index) => {
-        let image = data.categoryImage.mobile;
-        if (width >= 768 && width <= 1022) {
-          image = data.categoryImage.tablet;
-        } else if (width > 1022) {
-          image = data.categoryImage.desktop;
-        }
         return (
           <div
             key={data.id}
             className="py-9 lg:grid grid-cols-2  lg:mx-[130px]  lg:text-left">
             <div className="mx-[20px] rounded-md px-8 py-3 text-black ">
-              <img src={image} alt={data.name} className="mx-auto " />
+              <picture className="mx-[10px] md:mx-0 rounded-md px-8 py-3 ">
+                <source
+                  srcSet={`${"."}${data.categoryImage.desktop}`}
+                  media="(min-width: 1023px)"
+                />
+                <source
+                  srcSet={`${"."}${data.categoryImage.tablet}`}
+                  media="(min-width: 768px)"
+                />
+                <source srcSet={data.categoryImage.mobile} />
+                <img src={data.categoryImage.mobile} alt={data.name} />
+              </picture>
             </div>
             <div
               className=" lg:pt-8 md:pl-16 "

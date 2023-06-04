@@ -1,18 +1,38 @@
-import { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
 const Cart = () => {
-  const { cart, quantity } = useSelector((state) => state.cart);
+  const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const [count, setCount] = useState(quantity);
-  const increaseHandleClick = () => {
-    setCount((prev) => prev + 1);
+
+  const increaseCart = (id) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity + 1,
+        };
+      }
+
+      return item;
+    });
+    dispatch(cartActions.updateCart(updatedCart));
   };
-  const decreaseHandleClick = () => {
-    count <= 0 ? setCount(0) : setCount((prev) => prev - 1);
+
+  const decreaseCart = (id) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity - 1,
+        };
+      }
+      return item;
+    });
+    dispatch(cartActions.updateCart(updatedCart));
   };
   const removeAll = () => {
     dispatch(cartActions.removeAll());
@@ -40,22 +60,31 @@ const Cart = () => {
                   <img
                     className="w-12 rounded-md mt-4"
                     src={`${"."}${item.image.mobile}`}
-                    alt={item.name}
+                    alt={item.slug}
                   />
                 </div>
                 <div className="w-24 mt-4 ml-6 text-[12px]">
                   <h4>{item.name}</h4>
-                  <p>${item.price * count}</p>
+                  <p>${item.price}</p>
                 </div>
               </div>
 
               <div>
                 <button className="w-[90px] rounded-md h-[40px] mt-6 font-medium flex justify-around py-2 bg-[#F1F1F1]">
-                  <span onClick={decreaseHandleClick} className="text-center">
+                  <span
+                    onClick={() => {
+                      decreaseCart(item.id);
+                    }}
+                    className="text-center">
                     -
                   </span>
-                  {count}
-                  <span onClick={increaseHandleClick}>+</span>
+                  {item.quantity}
+                  <span
+                    onClick={() => {
+                      increaseCart(item.id);
+                    }}>
+                    +
+                  </span>
                 </button>
               </div>
             </div>

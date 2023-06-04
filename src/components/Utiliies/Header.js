@@ -29,27 +29,27 @@ const Header = () => {
             <img src="../assets/shared/desktop/logo.svg" alt="logo" />
           </div>
         </Link>
-        <div className=" text-white hidden lg:flex lg:ml-[-110px]">
+        <ul className=" text-white hidden lg:flex lg:ml-[-110px]">
           {products.map((product, index) => {
             let linked = product === "home" ? "/" : `/${product}`;
             return (
-              <div key={index}>
+              <li
+                className="uppercase sm:mr-3 cursor-pointer sm:text-[20px] text-[14px] pt-1 list-none"
+                key={index}>
                 <NavLink
                   to={linked}
                   style={({ isActive }) => ({
                     color: isActive ? "#fbaf85" : "white",
                   })}
-                  className="text-[12px] sm:text-[12px]"
+                  className="text-[12px] sm:text-[14px] "
                   end>
-                  <li className="uppercase sm:mr-3 sm:text-[20px] text-[14px] pt-1 list-none">
-                    {product}
-                  </li>
+                  {product}
                 </NavLink>
-              </div>
+              </li>
             );
           })}
-        </div>
-        <div onClick={cartHandleClick} className="flex">
+        </ul>
+        <div onClick={cartHandleClick} className="flex cursor-pointer">
           <img src="../assets/shared/desktop/icon-cart.svg" alt="cartIcon" />
           <sub className="text-red-500 text-center ml-1">
             {cart.length <= 0 ? null : cart.length}
