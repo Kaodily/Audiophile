@@ -12,6 +12,7 @@ const cartSlice = createSlice({
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       }
       state.isOpen = !state.isOpen;
+      // return { ...state, cart: JSON.parse(localStorage.getItem("cart")) };
     },
     addItem(state, action) {
       const { count, product } = action.payload;
@@ -27,14 +28,13 @@ const cartSlice = createSlice({
               }
             : item
         );
+        localStorage.setItem("cart", JSON.stringify({ updatedCart }));
         return { ...state, cart: updatedCart };
       }
 
-      const total = product.price * count;
-      console.log(total);
       const newItem = { ...product, quantity: count };
       const updatedCart = [...state.cart, newItem];
-
+      localStorage.setItem("cart", JSON.stringify({ updatedCart }));
       return { ...state, cart: updatedCart };
     },
     updateCart(state, action) {

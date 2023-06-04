@@ -14,18 +14,9 @@ const formData = {
 };
 
 const AppContext = ({ children }) => {
-  const [width, setWidth] = useState("");
   const [form, setForm] = useState(formData);
-  useEffect(() => {
-    window.addEventListener("resize", windowListener);
-    return () => {
-      window.removeEventListener("resize", windowListener);
-    };
-  }, [width]);
+  useEffect(() => {}, []);
 
-  function windowListener() {
-    setWidth(window.innerWidth);
-  }
   const formChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => {
@@ -41,7 +32,7 @@ const AppContext = ({ children }) => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <Context.Provider value={{ datas, width, formChange, setForm }}>
+    <Context.Provider value={{ datas, formChange, setForm }}>
       {children}
     </Context.Provider>
   );

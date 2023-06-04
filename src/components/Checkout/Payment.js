@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { checkoutActions } from "../../store/checkout.slice";
 
 const Payment = () => {
-  const { eMoney, cashOnDelivery } = useSelector((state) => state.checkout);
+  const { eMoney } = useSelector((state) => state.checkout);
 
   const dispatch = useDispatch();
   const handleChange = (e) => {
@@ -56,8 +56,6 @@ const Payment = () => {
           />
         </div>
       )}
-      {cashOnDelivery && <p>hello</p>}
-      {/* </form> */}
     </div>
   );
 };

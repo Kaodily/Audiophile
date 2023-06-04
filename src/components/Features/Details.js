@@ -29,11 +29,11 @@ const Details = ({ filtered }) => {
             <div className="md:grid grid-cols-2 text-left ">
               <picture className="mx-[10px] md:mx-0 rounded-md px-8 py-3 ">
                 <source
-                  srcSet={`${"."}${product.image.desktop}`}
+                  srcSet={product.image.desktop}
                   media="(min-width: 1280px)"
                 />
                 <source
-                  srcSet={`${"."}${product.image.tablet}`}
+                  srcSet={product.image.table}
                   media="(min-width: 768px)"
                 />
                 <source srcSet={product.image.mobile} />
@@ -47,7 +47,7 @@ const Details = ({ filtered }) => {
                   {product.description}
                 </p>
                 <p className="text-[12px] sm:text-[16px] font-bold py-4 px-9">
-                  $ {product.price}
+                  $ {product?.price.toLocaleString()}
                 </p>
                 <div className="flex pl-9">
                   <div>

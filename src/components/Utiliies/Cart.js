@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
 const Cart = () => {
+  const [total, setTotal] = useState(0);
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
@@ -34,6 +35,17 @@ const Cart = () => {
     });
     dispatch(cartActions.updateCart(updatedCart));
   };
+
+  const totalItem = () => {
+    let arr = cart.map((item) => item.price * item.quantity);
+    let totalSum = arr.reduce((accum, incre) => accum + incre);
+    setTotal(totalSum);
+  };
+
+  useEffect(() => {
+    totalItem();
+  });
+
   const removeAll = () => {
     dispatch(cartActions.removeAll());
   };
@@ -65,7 +77,7 @@ const Cart = () => {
                 </div>
                 <div className="w-24 mt-4 ml-6 text-[12px]">
                   <h4>{item.name}</h4>
-                  <p>${item.price}</p>
+                  <p>${item?.price.toLocaleString()}</p>
                 </div>
               </div>
 
@@ -93,7 +105,7 @@ const Cart = () => {
       </div>
       <div className="py-1 my-4 flex justify-between">
         <p>TOTAL</p>
-        <p>$0</p>
+        <p>${total.toLocaleString()}</p>
       </div>
       <div className="flex justify-center">
         <Link to={"/Checkout"}>
