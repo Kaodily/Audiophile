@@ -29,14 +29,14 @@ const Details = ({ filtered }) => {
             <div className="md:grid grid-cols-2 text-left ">
               <picture className="mx-[10px] md:mx-0 rounded-md px-8 py-3 ">
                 <source
-                  srcSet={`${product.image.tablet}`}
+                  srcSet={`${"."}${product.image.tablet}`}
                   media="(min-width: 1280px)"
                 />
                 <source
-                  srcSet={`${product.image.tablet}`}
+                  srcSet={`${"."}${product.image.tablet}`}
                   media="(min-width: 768px)"
                 />
-                <source srcSet={`${product.image.mobile}`} />
+                <source srcSet={`${"."}${product.image.mobile}`} />
                 <img src={product.image.mobile} alt={product.name} />
               </picture>
               <div className="lg:pr-[200px] md:pt-36 lg:pt-24 md:leading-6">
