@@ -29,7 +29,7 @@ const Details = ({ filtered }) => {
             <div className="md:grid grid-cols-2 text-left ">
               <picture className="mx-[10px] md:mx-0 rounded-md px-8 py-3 ">
                 <source
-                  srcSet={`${"."}${product.image.tablet}`}
+                  srcSet={`${"."}${product.image.desktop}`}
                   media="(min-width: 1280px)"
                 />
                 <source

@@ -9,6 +9,9 @@ const generalSlice = createSlice({
     openNav(state) {
       state.isNav = !state.isNav;
     },
+    closeNav(state) {
+      state.isNav = false;
+    },
   },
 });
 
