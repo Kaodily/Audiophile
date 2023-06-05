@@ -30,8 +30,8 @@ const Others = ({ filtered }) => {
                       srcSet={`${"."}${other.image.tablet}`}
                       media="(min-width: 768px)"
                     />
-                    <source srcSet={other.image.mobile} />
-                    <img src={other.image.mobile} alt={other.name} />
+                    <source srcSet={`${"."}${other.image.mobile}`} />
+                    <img src={`${"."}${other.image.mobile}`} alt={other.name} />
                   </picture>
 
                   <h5 className="uppercase pt-2 font-bold text-[14px] sm:text-[16px]">

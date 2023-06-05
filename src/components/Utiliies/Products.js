@@ -1,11 +1,8 @@
-import { useDispatch } from "react-redux";
 import { datas } from "../../Data";
 import { Link } from "react-router-dom";
 const Products = () => {
-  const dispatch = useDispatch();
-
   return (
-    <div className=" sm:flex md:justify-center sm:mt-16 sm:mx-8">
+    <div className=" mx-9 sm:flex md:justify-center sm:mt-16 sm:mx-8">
       {datas.map((data) => {
         return (
           <div

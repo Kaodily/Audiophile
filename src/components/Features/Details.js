@@ -37,7 +37,7 @@ const Details = ({ filtered }) => {
                   media="(min-width: 768px)"
                 />
                 <source srcSet={`${"."}${product.image.mobile}`} />
-                <img src={product.image.mobile} alt={product.name} />
+                <img src={`${"."}${product.image.mobile}`} alt={product.name} />
               </picture>
               <div className="lg:pr-[200px] md:pt-36 lg:pt-24 md:leading-6">
                 <h2 className="font-bold text-[20px] sm:text-[22px] lg:w-[180px] ml-9 py-4  tracking-widest uppercase">
