@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Earphones = () => {
   return (
-    <div className="earphones h-[200px] lg:h-[300px] sm:col-span-2 lg:ml-[18%] mt-12 mx-[30px] sm:mx-[0] sm:mr-[10px] sm:ml-[30px] pt-24 px-9 rounded-md text-black  "></div>
+    <div className="bg-[url('../public/assets/home/mobile/image-earphones-yx1.jpg')] sm:bg-[url('../public/assets/home/tablet/image-earphones-yx1.jpg')] lg:bg-[url('../public/assets/home/desktop/image-earphones-yx1.jpg')]   bg-center bg-no-repeat bg-cover h-[200px] lg:h-[300px] sm:col-span-2 lg:ml-[18%] mt-12 mx-[30px] sm:mx-[0] sm:mr-[10px] sm:ml-[30px] pt-24 px-9 rounded-md text-black  "></div>
   );
 };
 export const EarphonesInformation = () => {
