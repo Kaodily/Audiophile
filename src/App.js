@@ -7,9 +7,9 @@ import Header from "./components/Utiliies/Header";
 import Product from "./components/ProductDetails/Product";
 import Home from "./components/Homepage/Home";
 import Features from "./components/Features/Features";
-import Exportmodal from "./components/Utiliies/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import Navbar from "./components/Utiliies/Navbar";
+import Exportmodal from "./components/Utiliies/ExportModal";
 
 export const DataContext = createContext();
 function App() {

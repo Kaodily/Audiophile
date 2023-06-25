@@ -40,7 +40,7 @@ const Summary = () => {
                     <p>${item.price}</p>
                   </div>
                 </div>
-                <p>x2</p>
+                <p>x{item.quantity}</p>
               </div>
             );
           })}

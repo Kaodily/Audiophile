@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 const SpeakerZX9 = () => {
   return (
-    <div className="bg-[url('../public/assets/home/desktop/pattern-circles.svg')] sm:bg-left sm:bg-cover h-[500px] sm:h-[580px] lg:flex lg:justify-between  mt-16 bg-[#D87D4A] mx-[30px] lg:mx-[9%] py-8 rounded-md lg:text-left text-white text-center ">
+    <div className="bg-[url('../public/assets/home/desktop/pattern-circles.svg')] bg-top bg-cover sm:bg-bottom bg-no-repeat lg:bg-left lg:bg-contain  h-[500px] sm:h-[580px] lg:flex lg:justify-between  mt-16 bg-[#D87D4A] mx-[30px] lg:mx-[9%] py-8 rounded-md lg:text-left text-white text-center ">
       <div>
         <img
           src="../assets/home/desktop/image-speaker-zx9.png"
-          className="w-[150px] sm:w-[200px] lg:w-[380px] mx-auto pt-3 lg:pt-[90px] lg:ml-[100px]"
+          className="w-[150px] sm:w-[200px] lg:w-[380px] mx-auto pt-3 lg:pt-[90px]  lg:ml-[100px]"
           alt="speakerzx9"
         />
       </div>
