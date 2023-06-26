@@ -1,14 +1,14 @@
-import { createContext, Fragment } from "react";
+import React, { createContext, Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import Header from "./components/Utiliies/Header";
 
 import Product from "./components/ProductDetails/Product";
 import Home from "./components/Homepage/Home";
 import Features from "./components/Features/Features";
 import Checkout from "./components/Checkout/Checkout";
 import Navbar from "./components/Utiliies/Navbar";
+import Header from "./components/Utiliies/Header";
 import Exportmodal from "./components/Utiliies/ExportModal";
 
 export const DataContext = createContext();

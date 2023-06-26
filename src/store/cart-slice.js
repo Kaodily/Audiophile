@@ -12,7 +12,6 @@ const cartSlice = createSlice({
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       }
       state.isOpen = !state.isOpen;
-      // return { ...state, cart: JSON.parse(localStorage.getItem("cart")) };
     },
     addItem(state, action) {
       const { count, product } = action.payload;
