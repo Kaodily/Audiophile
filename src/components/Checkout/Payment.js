@@ -16,7 +16,6 @@ const Payment = () => {
   return (
     <div className="p-5 font-bold text-[13px]">
       <h4 className="mb-4 font-bold text-[#fbaf85] ">PAYMENT DETAILS</h4>
-      {/* <form className=""> */}
       <label htmlFor="Payment Method">Payment Method</label>
       <div className="w-[100%] rounded-md mb-6 mt-2 h-[50px] border-2 flex items-center pl-3  border-gray-200">
         <input

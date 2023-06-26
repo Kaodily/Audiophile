@@ -15,8 +15,11 @@ const Summary = () => {
 
   useEffect(() => {
     totalItem();
+    console.log("hello");
   });
+
   const vat = 0.002 * total;
+
   return (
     <div className="mx-5 sm:mx-12 lg:w-[50%] shadow-md my-12  h-max  rounded-md py-5 lg:my-5 bg-white">
       <h3 className="px-5">Summary</h3>
