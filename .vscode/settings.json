@@ -1,9 +1,9 @@
-{
-  "emmet.preferences": {
+// {
+//   "emmet.preferences": {
   
-  },
-  "emmet.includeLanguages": {
-      "javascript": "javascriptreact"
-   },
-   "editor.indentSize": "tabSize"
-}
+//   },
+//   "emmet.includeLanguages": {
+//       "javascript": "javascriptreact"
+//    },
+//    "editor.indentSize": "tabSize"
+// }

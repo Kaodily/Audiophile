@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Headphones = () => {
   return (
-    <article className="bg-[url('../public/assets/home/mobile/image-header.jpg')] sm:bg-[url('../public/assets/home/tablet/image-header.jpg')] lg:bg-[url('../public/assets/home/desktop/image-hero.jpg')]  h-[580px] sm:h-[700px] text-center lg:text-left py-[180px] text-white">
+    <article className="bg-[url('../public/assets/home/mobile/image-header.jpg')] bg-no-repeat bg-center bg-cover lg:bg-[url('../public/assets/home/desktop/image-hero.jpg')]  h-[580px] sm:h-[700px] text-center lg:text-left py-[180px] text-white">
       <div className="lg:w-[40%] lg:pl-[10%]">
         <p className="text-[14px] tracking-widest  opacity-50">NEW PRODUCT</p>
         <h1 className="uppercase text-[24px] sm:px-[190px] lg:max-w-3xl sm:text-[36px] lg:pl-[0] lg:pr-[0]  px-[80px] tracking-widest py-[20px]">
