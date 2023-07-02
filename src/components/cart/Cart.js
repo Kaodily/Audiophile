@@ -10,13 +10,14 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const totalItem = () => {
-    let arr = cart.map((item) => item.price * item.quantity);
-    let totalSum = arr.reduce((accum, incre) => accum + incre);
+    let arr = cart?.map((item) => item.price * item.quantity);
+    let totalSum =
+      arr.length >= 1 ? arr.reduce((accum, incre) => accum + incre) : 0;
     setTotal(totalSum);
   };
 
   useEffect(() => {
-    totalItem();
+    if (cart) totalItem();
   });
 
   const removeAll = () => {

@@ -13,14 +13,17 @@ const Productdetails = ({ data }) => {
               <picture className="mx-[10px] md:mx-0 rounded-md px-8 py-3 ">
                 <source
                   srcSet={`${"."}${data.categoryImage.desktop}`}
-                  media="(min-width: 1023px)"
+                  media="(min-width: 1024px)"
                 />
                 <source
                   srcSet={`${"."}${data.categoryImage.tablet}`}
                   media="(min-width: 768px)"
                 />
                 <source srcSet={data.categoryImage.mobile} />
-                <img src={data.categoryImage.mobile} alt={data.name} />
+                <img
+                  src={data.categoryImage.mobile}
+                  alt={data.name}
+                />
               </picture>
             </div>
             <div
