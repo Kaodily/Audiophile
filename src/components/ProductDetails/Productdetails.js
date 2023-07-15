@@ -20,10 +20,7 @@ const Productdetails = ({ data }) => {
                   media="(min-width: 768px)"
                 />
                 <source srcSet={data.categoryImage.mobile} />
-                <img
-                  src={data.categoryImage.mobile}
-                  alt={data.name}
-                />
+                <img src={data.categoryImage.mobile} alt={data.name} />
               </picture>
             </div>
             <div

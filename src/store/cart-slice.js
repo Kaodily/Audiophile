@@ -8,10 +8,16 @@ const cartSlice = createSlice({
   },
   reducers: {
     cartIsOpen(state) {
+      state.isOpen = !state.isOpen;
       if (state) {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       }
-      state.isOpen = !state.isOpen;
+      // if (typeof window != "undefined" && window.document) {
+      //   document.body.style.overflow = "hidden";
+      // }
+      // if (!state.isOpen) {
+      //   document.body.style.overflow = "unset";
+      // }
     },
     addItem(state, action) {
       const { count, product } = action.payload;
@@ -40,9 +46,11 @@ const cartSlice = createSlice({
       const newCart = action.payload;
       return { ...state, cart: newCart };
     },
-    backdropHandleClick(state) {
-      state.isOpen = !state.isOpen;
+
+    closeCartModal(state) {
+      state.isOpen = false;
     },
+
     removeAll(state) {
       state.cart = [];
     },

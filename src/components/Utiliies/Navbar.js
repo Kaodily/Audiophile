@@ -5,14 +5,12 @@ import Products from "./Products";
 
 const Navbar = () => {
   const { isNav } = useSelector((state) => state.general);
-
+  if (!isNav) return null;
   return (
     <>
-      {isNav && (
-        <div className="w-full shadow-md z-10 px-5 lg:hidden absolute bg-white h-max">
-          <Products />
-        </div>
-      )}
+      <div  className="w-full shadow-md z-10 px-5 lg:hidden max-h-[600px] overflow-scroll absolute top-[80px] bg-white h-max">
+        <Products />
+      </div>
     </>
   );
 };

@@ -8,6 +8,12 @@ const generalSlice = createSlice({
   reducers: {
     openNav(state) {
       state.isNav = !state.isNav;
+      if (typeof window != "undefined" && window.document) {
+        document.body.style.overflow = "hidden";
+      }
+      if (!state.isNav) {
+        document.body.style.overflow = "unset";
+      }
     },
     closeNav(state) {
       state.isNav = false;

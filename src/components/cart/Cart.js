@@ -57,13 +57,23 @@ const Cart = () => {
 };
 
 const CartComponent = () => {
+  const dispatch = useDispatch();
   const cartIsOpen = useSelector((state) => state.cart.isOpen);
+  const closeCartModal = () => {
+    dispatch(cartActions.closeCartModal());
+  };
+  if (!cartIsOpen) return null;
+
   return (
-    cartIsOpen && (
-      <div className="max-h-96 w-[90%] lg:w-[35%] sm:w-[45%] sm:left-[75%] lg:left-[75%] top-[100px] z-10 left-[50%] translate-x-[-50%]  bg-white rounded-md absolute  overflow-scroll">
+    <>
+      <div
+        onClick={closeCartModal}
+        className="fixed bottom-0 top-20 right-0 left-0 bg-[rgb(0,0,0,0.7)] z-10"
+      />
+      <div className="max-h-96 w-[90%] lg:w-[35%] sm:w-[45%] sm:left-[75%] lg:left-[75%] top-[100px] z-10 left-[50%] translate-x-[-50%]  bg-white rounded-md fixed  overflow-scroll">
         <Cart />
       </div>
-    )
+    </>
   );
 };
 

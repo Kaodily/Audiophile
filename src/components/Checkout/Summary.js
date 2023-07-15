@@ -15,7 +15,6 @@ const Summary = () => {
 
   useEffect(() => {
     totalItem();
-    console.log("hello");
   });
 
   const vat = 0.002 * total;
